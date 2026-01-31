@@ -40,13 +40,7 @@ export default function IntroAnimation() {
             className="absolute left-0 top-0 w-1/2 h-full bg-black flex items-center justify-center overflow-hidden"
             initial={{ x: 0 }}
             animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
-            transition={{ 
-              exit: { 
-                duration: 0.8, 
-                ease: [0.43, 0.13, 0.23, 0.96] 
-              } 
-            }}
+            exit={{ x: '-100%', transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] } }}
           >
             <motion.div
               className="relative w-80 h-80 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]"
@@ -73,13 +67,7 @@ export default function IntroAnimation() {
             className="absolute right-0 top-0 w-1/2 h-full bg-black flex items-center justify-center overflow-hidden"
             initial={{ x: 0 }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ 
-              exit: { 
-                duration: 0.8, 
-                ease: [0.43, 0.13, 0.23, 0.96] 
-              } 
-            }}
+            exit={{ x: '100%', transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] } }}
           >
             <motion.div
               className="relative w-80 h-80 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]"
@@ -107,12 +95,11 @@ export default function IntroAnimation() {
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
             initial={{ opacity: 0, filter: 'blur(20px)', scale: 0.8 }}
             animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
-            exit={{ opacity: 0, scale: 1.2 }}
+            exit={{ opacity: 0, scale: 1.2, transition: { duration: 0.5 } }}
             transition={{
               opacity: { duration: 1, delay: 2 },
               filter: { duration: 1, delay: 2 },
-              scale: { duration: 1, delay: 2 },
-              exit: { duration: 0.5 }
+              scale: { duration: 1, delay: 2 }
             }}
           >
             <div className="relative w-48 h-48 md:w-64 md:h-64">

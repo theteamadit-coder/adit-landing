@@ -149,7 +149,7 @@ export default function MediaCoverageSection() {
             직방은 그 <span className="text-primary">타이밍을 알고</span> 있습니다
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 break-keep">
-            <span className="text-white font-semibold">'관심 → 탐색 → 비교 → 재고려'</span>까지,<br />
+            <span className="text-white font-semibold">&apos;관심 → 탐색 → 비교 → 재고려&apos;</span>까지,<br />
             실제 행동 흐름을 분석해 시점별 맞춤 광고가 가능한 유일한 플랫폼입니다
           </p>
         </motion.div>
@@ -167,7 +167,7 @@ export default function MediaCoverageSection() {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-primary text-white shadow-lg shadow-primary/50'
+                  ? 'bg-white text-black shadow-lg shadow-white/30 border-2 border-white'
                   : 'bg-white/10 text-white hover:bg-white/20 hover:text-primary backdrop-blur-sm border border-white/20'
               }`}
               initial={{ opacity: 0, scale: 0.8 }}

@@ -166,10 +166,10 @@ export default function WhyUsSection() {
         >
           <div className="p-8 md:p-12 rounded-2xl backdrop-blur-md bg-primary/10 border border-primary/30">
             <p className="text-xl md:text-2xl text-white font-semibold mb-4 break-keep">
-              "모든 사람에게 노출되는 광고는,
+              &quot;모든 사람에게 노출되는 광고는,
             </p>
             <p className="text-2xl md:text-3xl text-primary font-bold mb-6 break-keep">
-              결국 아무에게도 도달하지 않습니다."
+              결국 아무에게도 도달하지 않습니다.&quot;
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto my-6"></div>
             <p className="text-lg md:text-xl text-gray-300 break-keep">
