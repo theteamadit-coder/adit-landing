@@ -26,14 +26,23 @@ const itemVariants: Variants = {
 };
 
 export default function HeroSection() {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/asset/직방&호갱노노 상품소개서_2026.01Q.pdf';
+    link.download = '직방&호갱노노 상품소개서_2026.01Q.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section 
-      className="relative min-h-screen flex items-center justify-center bg-overlay-darker overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-overlay-darker overflow-hidden bg-[center_center] sm:bg-center"
       style={{
         backgroundImage: 'url(/asset/bg/photo-1486406146926-c627a92ad1ab.jpeg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundPosition: 'center 30%',
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="container relative z-10 mx-auto px-4 py-32">
@@ -103,11 +112,12 @@ export default function HeroSection() {
               무료 컨설팅 신청하기
             </motion.button>
             <motion.button 
+              onClick={handleDownload}
               className="bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white/20 hover:border-white/50 text-white px-12 py-5 rounded-xl text-xl font-black transition-all transform hover:scale-105 shadow-2xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              사업소개서 다운로드
+              상품소개서 다운로드
             </motion.button>
           </motion.div>
 

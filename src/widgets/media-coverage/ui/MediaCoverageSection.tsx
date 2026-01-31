@@ -126,12 +126,12 @@ export default function MediaCoverageSection() {
     <section 
       ref={ref}
       id="media"
-      className="relative py-24 md:py-32 bg-overlay-dark overflow-hidden"
+      className="relative py-24 md:py-32 bg-overlay-dark overflow-hidden bg-[center_center] sm:bg-center"
       style={{
         backgroundImage: 'url(/asset/bg/photo-1486406146926-c627a92ad1ab.jpeg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundPosition: 'center 30%',
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="container relative z-10 mx-auto px-4">

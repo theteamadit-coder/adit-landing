@@ -63,12 +63,12 @@ export default function WhyUsSection() {
     <section 
       ref={ref}
       id="why-us-section"
-      className="relative py-24 md:py-32 bg-overlay overflow-hidden"
+      className="relative py-24 md:py-32 bg-overlay overflow-hidden bg-[center_center] sm:bg-center"
       style={{
         backgroundImage: 'url(/asset/bg/photo-1460925895917-afdab827c52f.jpeg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundPosition: 'center 40%',
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="container relative z-10 mx-auto px-4">

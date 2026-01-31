@@ -161,4 +161,11 @@
     content: '';
     @apply absolute inset-0 bg-black/85 z-0;
   }
+
+  /* Mobile background fix */
+  @media (max-width: 768px) {
+    [style*="backgroundImage"] {
+      background-attachment: scroll !important;
+    }
+  }
 }
