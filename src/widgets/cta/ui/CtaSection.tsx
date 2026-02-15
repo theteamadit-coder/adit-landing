@@ -30,7 +30,7 @@ export default function CtaSection() {
   };
 
   return (
-    <section 
+    <section
       ref={ref}
       id="contact"
       className="relative py-24 md:py-32 bg-overlay-darker overflow-hidden bg-[center_center] sm:bg-center"
@@ -38,12 +38,12 @@ export default function CtaSection() {
         backgroundImage: 'url(/asset/bg/photo-1460925895917-afdab827c52f.jpeg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 40%',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="container relative z-10 mx-auto px-4 max-w-5xl">
         {/* 헤더 */}
-        <motion.div 
+        <motion.div
           className="text-left md:text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -58,7 +58,7 @@ export default function CtaSection() {
         </motion.div>
 
         {/* 문의 폼 */}
-        <motion.div 
+        <motion.div
           className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
@@ -125,7 +125,7 @@ export default function CtaSection() {
             </motion.div>
 
             {/* 개인정보 동의 */}
-            <motion.div 
+            <motion.div
               className="bg-white/5 rounded-lg p-6 border border-white/10"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -146,18 +146,21 @@ export default function CtaSection() {
               <div className="max-h-40 overflow-y-auto text-xs text-gray-400 leading-relaxed bg-black/30 p-4 rounded border border-white/10">
                 <p className="font-semibold mb-2 text-gray-300">개인정보 수집 및 이용 동의</p>
                 <p className="mb-2">
-                  회사는 개인정보 보호법 제30조에 따라 정보 주체의 개인정보를 보호하고 
-                  이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 
-                  다음과 같이 개인정보 처리지침을 수립, 공개합니다.
+                  회사는 개인정보 보호법 제30조에 따라 정보 주체의 개인정보를 보호하고 이와 관련한
+                  고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보
+                  처리지침을 수립, 공개합니다.
                 </p>
                 <p className="mb-2">
-                  <strong className="text-gray-300">1. 수집하는 개인정보 항목:</strong> 성명, 연락처, 문의내용
+                  <strong className="text-gray-300">1. 수집하는 개인정보 항목:</strong> 성명,
+                  연락처, 문의내용
                 </p>
                 <p className="mb-2">
-                  <strong className="text-gray-300">2. 개인정보의 수집 및 이용목적:</strong> 문의 접수 및 상담, 서비스 제공
+                  <strong className="text-gray-300">2. 개인정보의 수집 및 이용목적:</strong> 문의
+                  접수 및 상담, 서비스 제공
                 </p>
                 <p>
-                  <strong className="text-gray-300">3. 개인정보의 보유 및 이용기간:</strong> 문의 처리 완료 후 1년간 보관
+                  <strong className="text-gray-300">3. 개인정보의 보유 및 이용기간:</strong> 문의
+                  처리 완료 후 1년간 보관
                 </p>
               </div>
             </motion.div>
@@ -178,17 +181,26 @@ export default function CtaSection() {
         </motion.div>
 
         {/* 연락처 정보 */}
-        <motion.div 
+        <motion.div
           className="mt-12 text-left md:text-center"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
           <p className="text-lg text-gray-300 mb-2">
-            전화 문의: <a href="tel:02-6949-5032" className="text-primary font-semibold hover:underline">02-6949-5032</a>
+            전화 문의:{' '}
+            <a href="tel:02-6949-5032" className="text-primary font-semibold hover:underline">
+              02-6949-5032
+            </a>
           </p>
           <p className="text-lg text-gray-300">
-            이메일: <a href="mailto:team@ad-it.co.kr" className="text-primary font-semibold hover:underline">team@ad-it.co.kr</a>
+            이메일:{' '}
+            <a
+              href="mailto:team@ad-it.co.kr"
+              className="text-primary font-semibold hover:underline"
+            >
+              team@ad-it.co.kr
+            </a>
           </p>
         </motion.div>
       </div>

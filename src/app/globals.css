@@ -168,4 +168,9 @@
       background-attachment: scroll !important;
     }
   }
+
+  /* Infinite scroll animation pause on hover */
+  .infinite-scroll:hover {
+    animation-play-state: paused;
+  }
 }

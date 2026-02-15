@@ -78,7 +78,7 @@ export default function Header() {
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-all font-black text-sm shadow-lg transform hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full transition-all font-bold text-sm shadow-lg transform hover:scale-105"
             >
               문의하기
             </button>
@@ -138,7 +138,7 @@ export default function Header() {
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-all font-black shadow-lg transform hover:scale-105"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition-all font-bold shadow-lg transform hover:scale-105"
             >
               문의하기
             </button>

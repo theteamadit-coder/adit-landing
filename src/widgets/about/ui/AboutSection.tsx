@@ -9,17 +9,6 @@ interface AboutItem {
   description: string;
 }
 
-interface StatItem {
-  value: string;
-  label: string;
-}
-
-const stats: StatItem[] = [
-  { value: '1,350만+', label: '부동산 관심층' },
-  { value: '31시간+', label: '월간 사용시간' },
-  { value: '5,000만+', label: '앱 다운로드' }
-];
-
 const aboutItems: AboutItem[] = [
   {
     icon: '',
@@ -49,44 +38,12 @@ export default function AboutSection() {
       className="relative py-24 md:py-32 bg-background"
     >
       <div className="container mx-auto px-4">
-        {/* 통계 */}
-        <div className="max-w-5xl mx-auto mb-20">
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/30"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.6 }}
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-left md:text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <motion.div 
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2"
-                  initial={{ scale: 0.5 }}
-                  animate={isInView ? { scale: 1 } : { scale: 0.5 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-base md:text-lg text-gray-400">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
         {/* 헤더 */}
         <motion.div 
           className="text-left md:text-center mb-20 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6 }}
         >
           <div className="inline-block px-6 py-2 rounded-full bg-primary/20 text-primary border border-primary/30 mb-6">
             직방 · 호갱노노 공식 광고 대행사
@@ -107,7 +64,7 @@ export default function AboutSection() {
               className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, delay: 0.5 + index * 0.15 }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
               whileHover={{ scale: 1.05 }}
             >
               {/* 배경 그라데이션 */}
