@@ -33,7 +33,13 @@ export default function CtaSection() {
     <section
       ref={ref}
       id="contact"
-      className="relative py-24 md:py-32 bg-background overflow-hidden"
+      className="relative py-24 md:py-32 bg-overlay-darker overflow-hidden"
+      style={{
+        backgroundImage: 'url(/asset/bg/고객지원.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       <div className="container relative z-10 mx-auto px-4 max-w-5xl">
         {/* 헤더 */}
