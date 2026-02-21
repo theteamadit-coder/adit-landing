@@ -175,7 +175,7 @@ export default function PartnersSection() {
         <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent my-20"></div>
 
         {/* 집행사례 */}
-        <div>
+        <div id="cases">
           <motion.div
             className="text-left md:text-center mb-16"
             initial={{ opacity: 0, y: 30 }}

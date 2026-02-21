@@ -64,6 +64,12 @@ export default function Header() {
 
           {/* 데스크톱 메뉴 */}
           <div className="hidden md:flex items-center space-x-6">
+            <button
+              onClick={() => scrollToSection('about-section')}
+              className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
+            >
+              소개
+            </button>
             <button 
               onClick={() => scrollToSection('services')}
               className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
@@ -74,13 +80,25 @@ export default function Header() {
               onClick={() => scrollToSection('media')}
               className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
             >
-              매체 소개
+              매체
+            </button>
+            <button
+              onClick={() => scrollToSection('why-us-section')}
+              className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
+            >
+              Why ADIT
             </button>
             <button 
               onClick={() => scrollToSection('clients')}
               className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
             >
               클라이언트
+            </button>
+            <button
+              onClick={() => scrollToSection('cases')}
+              className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
+            >
+              집행사례
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
@@ -123,7 +141,13 @@ export default function Header() {
 
         {/* 모바일 메뉴 */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4 space-y-3 bg-black/95 backdrop-blur-md rounded-lg p-4 mt-2">
+          <div className="md:hidden pb-4 space-y-1 bg-black/95 backdrop-blur-md rounded-lg p-4 mt-2">
+            <button
+              onClick={() => scrollToSection('about-section')}
+              className="block w-full text-left text-gray-300 hover:text-primary font-medium transition-colors py-2"
+            >
+              소개
+            </button>
             <button
               onClick={() => scrollToSection('services')}
               className="block w-full text-left text-gray-300 hover:text-primary font-medium transition-colors py-2"
@@ -134,7 +158,13 @@ export default function Header() {
               onClick={() => scrollToSection('media')}
               className="block w-full text-left text-gray-300 hover:text-primary font-medium transition-colors py-2"
             >
-              매체 소개
+              매체
+            </button>
+            <button
+              onClick={() => scrollToSection('why-us-section')}
+              className="block w-full text-left text-gray-300 hover:text-primary font-medium transition-colors py-2"
+            >
+              Why ADIT
             </button>
             <button
               onClick={() => scrollToSection('clients')}
@@ -142,12 +172,20 @@ export default function Header() {
             >
               클라이언트
             </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition-all font-bold shadow-lg transform hover:scale-105"
+            <button
+              onClick={() => scrollToSection('cases')}
+              className="block w-full text-left text-gray-300 hover:text-primary font-medium transition-colors py-2"
             >
-              문의하기
+              집행사례
             </button>
+            <div className="pt-2">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition-all font-bold shadow-lg transform hover:scale-105"
+              >
+                문의하기
+              </button>
+            </div>
           </div>
         )}
       </nav>
