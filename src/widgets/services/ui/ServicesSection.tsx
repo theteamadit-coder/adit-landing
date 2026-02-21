@@ -92,8 +92,8 @@ export default function ServicesSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section ref={ref} className="relative py-24 md:py-32 bg-background" id="services">
-      <div className="container mx-auto px-4">
+    <section ref={ref} className="relative py-24 md:py-32 bg-linear-to-br from-background via-primary/5 to-blue-950/20 overflow-hidden" id="services">
+      <div className="container relative z-10 mx-auto px-4">
         {/* 헤더 */}
         <motion.div 
           className="text-left md:text-center mb-20"

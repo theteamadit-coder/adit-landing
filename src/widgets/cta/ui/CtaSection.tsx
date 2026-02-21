@@ -33,13 +33,7 @@ export default function CtaSection() {
     <section
       ref={ref}
       id="contact"
-      className="relative py-24 md:py-32 bg-overlay-darker overflow-hidden bg-[center_center] sm:bg-center"
-      style={{
-        backgroundImage: 'url(/asset/bg/photo-1460925895917-afdab827c52f.jpeg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 40%',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="relative py-24 md:py-32 bg-background overflow-hidden"
     >
       <div className="container relative z-10 mx-auto px-4 max-w-5xl">
         {/* 헤더 */}

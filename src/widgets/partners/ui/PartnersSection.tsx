@@ -72,9 +72,15 @@ export default function PartnersSection() {
     <section
       ref={ref}
       id="clients"
-      className="relative py-24 md:py-32 bg-background overflow-hidden"
+      className="relative py-24 md:py-32 bg-overlay overflow-hidden"
+      style={{
+        backgroundImage: 'url(/asset/bg/EBjKR9wAYDAm0uWm7TPkZeEID_3QVQMmTsnSOe__-u5rwdVzb4NxBca6db8lR5onStWR19pdxUbt7IvIwRnOvNsDR25psLIGWy8Q9olHUXc.jpeg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4">
         {/* 클라이언트 & 파트너 */}
         <div className="mb-24">
           <motion.div
@@ -159,17 +165,6 @@ export default function PartnersSection() {
             </motion.div>
           </div>
 
-          <motion.div
-            className="text-left md:text-center"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <p className="text-gray-400 break-keep">
-              그 외 <span className="text-primary font-semibold">100+ 클라이언트</span>와 함께하고
-              있습니다
-            </p>
-          </motion.div>
         </div>
 
         <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent my-20"></div>

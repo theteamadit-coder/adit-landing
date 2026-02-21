@@ -37,8 +37,17 @@ export default function ProcessSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section ref={ref} className="relative py-24 md:py-32 bg-card">
-      <div className="container mx-auto px-4">
+    <section
+      ref={ref}
+      className="relative py-24 md:py-32 bg-overlay-dark overflow-hidden"
+      style={{
+        backgroundImage: 'url(/asset/bg/light-hand.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="container relative z-10 mx-auto px-4">
         {/* 헤더 */}
         <motion.div 
           className="text-left md:text-center mb-20 max-w-4xl mx-auto"

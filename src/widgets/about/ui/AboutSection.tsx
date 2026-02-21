@@ -35,9 +35,18 @@ export default function AboutSection() {
     <section 
       ref={ref}
       id="about-section"
-      className="relative py-24 md:py-32 bg-background"
+      className="relative py-24 md:py-32 overflow-hidden"
+      style={{
+        backgroundImage: 'url(/asset/bg/team-people.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      <div className="container mx-auto px-4">
+      {/* 어두운 오버레이 */}
+      <div className="absolute inset-0 bg-black/80" />
+
+      <div className="container relative z-10 mx-auto px-4">
         {/* 헤더 */}
         <motion.div 
           className="text-left md:text-center mb-20 max-w-4xl mx-auto"

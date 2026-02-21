@@ -126,14 +126,19 @@ export default function MediaCoverageSection() {
     <section 
       ref={ref}
       id="media"
-      className="relative py-24 md:py-32 bg-overlay-dark overflow-hidden bg-[center_center] sm:bg-center"
-      style={{
-        backgroundImage: 'url(/asset/bg/photo-1486406146926-c627a92ad1ab.jpeg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 30%',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="relative py-24 md:py-32 bg-background overflow-hidden"
     >
+      {/* 그리드 패턴 배경 - 반복 타일, 흐리게 */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: 'url(/asset/bg/GgKi8bBR3AxhELUhW2403hT-DIiconbvUE9T1lTs71S5R3xh62XzeVm_SdHeV4F1BHpEt0Ydi5oxRB9JTmlwfpFzoxPrfBHs3mNgUfcIflg.jpeg)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: '320px 320px',
+          filter: 'blur(0.6px)',
+        }}
+      />
+
       <div className="container relative z-10 mx-auto px-4">
         {/* 헤더 */}
         <motion.div 
