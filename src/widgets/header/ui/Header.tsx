@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,39 +47,44 @@ export default function Header() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* 로고 */}
           <div className="flex-shrink-0">
-            <button onClick={scrollToTop} className="flex items-center cursor-pointer">
-              <span className="text-2xl md:text-3xl font-bold text-white">
-                AD<span className="text-primary">IT</span>
-              </span>
+            <button onClick={scrollToTop} aria-label="홈으로 이동" className="flex items-center cursor-pointer">
+              <Image
+                src="/asset/only-logo.png"
+                alt="ADIT Logo"
+                width={40}
+                height={40}
+                className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                priority
+              />
             </button>
           </div>
 
           {/* 데스크톱 메뉴 */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-gray-300 hover:text-primary font-medium transition-colors"
+              className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
             >
               서비스
             </button>
             <button 
               onClick={() => scrollToSection('media')}
-              className="text-gray-300 hover:text-primary font-medium transition-colors"
+              className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
             >
               매체 소개
             </button>
             <button 
               onClick={() => scrollToSection('clients')}
-              className="text-gray-300 hover:text-primary font-medium transition-colors"
+              className="text-sm text-gray-300 hover:text-primary font-medium transition-colors"
             >
               클라이언트
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full transition-all font-bold text-sm shadow-lg transform hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition-all font-bold text-sm shadow-lg transform hover:scale-105"
             >
               문의하기
             </button>

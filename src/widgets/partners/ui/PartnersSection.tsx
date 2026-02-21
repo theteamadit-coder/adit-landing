@@ -48,6 +48,12 @@ const executionCases = [
   { name: '청량리 범양레우스', image: '청량리 범양레우스.png' },
   { name: '청량리역 요진와이시티', image: '청량리역 요진와이시티.jpg' },
   { name: '탑석푸르지오 파크7', image: '탑석푸르지오 파크7.jpg' },
+  { name: '판교 디오르나인', image: '판교 디오르나인.png' },
+  { name: '평촌 롯데캐슬 르씨엘', image: '평촌 롯데캐슬 르씨엘.jpg' },
+  { name: '평택브레인시티 한신더휴', image: '평택브레인시티 한신더휴.jpg' },
+  { name: '해링턴 스퀘어 과천', image: '해링턴 스퀘어 과천.jpg' },
+  { name: '화성 남양뉴타운 우미린 에듀하이', image: '화성 남양뉴타운 우미린 에듀하이.jpg' },
+  { name: '힐스테이트 회룡역 파크뷰', image: '힐스테이트 회룡역 파크뷰.jpg' },
 ];
 
 export default function PartnersSection() {
@@ -186,7 +192,7 @@ export default function PartnersSection() {
           </motion.div>
 
           {/* 사례 그리드 */}
-          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {displayedCases.map((caseItem, i) => (
               <motion.div
                 key={i}
@@ -194,18 +200,22 @@ export default function PartnersSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.4, delay: 0.5 + i * 0.03 }}
-                whileHover={{ scale: 1.05 }}
               >
-                <div className="aspect-[3/4] bg-card border border-border rounded-xl mb-3 overflow-hidden hover:border-primary/50 transition-all duration-300 relative">
+                <div className="aspect-4/3 bg-card rounded-xl overflow-hidden relative shadow-md group-hover:shadow-primary/20 group-hover:shadow-lg transition-shadow duration-300">
                   <Image
                     src={`/asset/집행사례 리스트/${caseItem.image}`}
                     alt={caseItem.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <p className="text-white text-sm font-semibold break-keep leading-snug">
+                      {caseItem.name}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm text-gray-300 font-medium text-center group-hover:text-primary transition-colors break-keep">
+                <p className="text-sm text-gray-400 font-medium text-center mt-2 group-hover:text-primary transition-colors duration-300 break-keep">
                   {caseItem.name}
                 </p>
               </motion.div>

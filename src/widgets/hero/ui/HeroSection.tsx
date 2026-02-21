@@ -116,7 +116,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              상품소개서 다운로드
+              상품소개서
             </motion.button>
           </motion.div>
 
