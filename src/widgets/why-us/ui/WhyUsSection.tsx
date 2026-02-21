@@ -123,20 +123,19 @@ export default function WhyUsSection() {
           {points.map((point, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-2xl backdrop-blur-md bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-500"
+              className="group relative overflow-hidden rounded-2xl backdrop-blur-md bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500"
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
               transition={{ duration: 0.6, delay: 0.8 + index * 0.15 }}
               whileHover={{ scale: 1.01 }}
             >
               <div className="flex flex-col md:flex-row items-start gap-6 p-8 md:p-10">
-                {/* 넘버 - 미니멀 스타일 */}
-                <div className="flex-shrink-0 flex items-start gap-4">
-                  <div className="relative">
-                    <span className="text-6xl md:text-7xl font-black text-white/10 group-hover:text-primary/20 transition-colors duration-300">
+                {/* 넘버 - 왼쪽 accent 라인 고정 */}
+                <div className="flex-shrink-0 flex items-start">
+                  <div className="border-l-4 border-primary/40 group-hover:border-primary pl-4 transition-colors duration-500">
+                    <span className="text-6xl md:text-7xl font-black text-white/15 group-hover:text-primary/50 transition-colors duration-500">
                       {point.number}
                     </span>
-                    <div className="absolute top-0 left-0 w-1 h-full bg-primary group-hover:w-full transition-all duration-500"></div>
                   </div>
                 </div>
 
@@ -152,7 +151,7 @@ export default function WhyUsSection() {
               </div>
 
               {/* 하단 액센트 라인 */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-700"></div>
             </motion.div>
           ))}
         </div>

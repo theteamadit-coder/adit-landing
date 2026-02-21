@@ -8,17 +8,17 @@ export default function IntroAnimation() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // 인트로 동안 스크롤 비활성화
+    // 인트로 동안 + 애니메이션 끝난 후 0.5초까지 스크롤 비활성화
     document.body.style.overflow = 'hidden';
 
-    // 애니메이션 완료 후 처리 (5초 후)
-    const timer = setTimeout(() => {
-      setIsVisible(false);
+    const hideTimer = setTimeout(() => setIsVisible(false), 5000);
+    const scrollUnlockTimer = setTimeout(() => {
       document.body.style.overflow = 'unset';
-    }, 5000);
+    }, 5500); // 5초 애니메이션 + 0.5초 후 스크롤 해제
 
     return () => {
-      clearTimeout(timer);
+      clearTimeout(hideTimer);
+      clearTimeout(scrollUnlockTimer);
       document.body.style.overflow = 'unset';
     };
   }, []);
@@ -27,7 +27,7 @@ export default function IntroAnimation() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[9999] pointer-events-none"
+          className="fixed inset-0 z-9999 pointer-events-none"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
@@ -90,9 +90,9 @@ export default function IntroAnimation() {
           </motion.div>
 
 
-          {/* 중앙 로고 */}
+          {/* 로고: 화면 정중앙 */}
           <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
             initial={{ opacity: 0, filter: 'blur(20px)', scale: 0.8 }}
             animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
             exit={{ opacity: 0, scale: 1.2, transition: { duration: 0.5 } }}
@@ -111,25 +111,22 @@ export default function IntroAnimation() {
                 priority
               />
             </div>
-            
-            {/* 로고 하단 텍스트 */}
-            <motion.div
-              className="text-center mt-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 2.8 }}
-              exit={{ opacity: 0 }}
-            >
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                애드잇
-              </h1>
-              <p className="text-base md:text-lg text-primary font-semibold mb-2">
-                직방 · 호갱노노 공식 광고 대행사
-              </p>
-              <p className="text-sm md:text-base text-gray-400">
-                분양 광고의 새로운 기준
-              </p>
-            </motion.div>
+          </motion.div>
+
+          {/* 직방 · 호갱노노 공식 대행사 — 강조 텍스트 */}
+          <motion.div
+            className="absolute left-1/2 top-[65%] -translate-x-1/2 z-10 text-center px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 2.8 }}
+            exit={{ opacity: 0 }}
+          >
+            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary tracking-tight">
+              직방 · 호갱노노 공식 대행사
+            </p>
+            <p className="text-lg md:text-xl text-gray-400 mt-3">
+              분양 광고의 새로운 기준
+            </p>
           </motion.div>
 
           {/* 빛 효과 */}
