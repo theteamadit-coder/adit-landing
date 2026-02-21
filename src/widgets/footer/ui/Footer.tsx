@@ -1,4 +1,19 @@
+'use client';
+
 export default function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 64;
+      const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const navLinkClass = "text-sm text-left hover:text-primary transition-colors cursor-pointer";
+
   return (
     <footer className="bg-black/95 text-gray-300 border-t border-white/10">
       {/* 메인 푸터 */}
@@ -9,33 +24,33 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-semibold mb-4">서비스</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">타겟 메시징</a></li>
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">앱 패키지</a></li>
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">인플루언서 광고</a></li>
+                <li><button onClick={() => scrollToSection('services')} className={navLinkClass}>타겟 메시징</button></li>
+                <li><button onClick={() => scrollToSection('services')} className={navLinkClass}>앱 패키지</button></li>
+                <li><button onClick={() => scrollToSection('services')} className={navLinkClass}>인플루언서 광고</button></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">매체</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">직방 & 호갱노노</a></li>
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">카드사</a></li>
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">통신사</a></li>
+                <li><button onClick={() => scrollToSection('media')} className={navLinkClass}>직방 &amp; 호갱노노</button></li>
+                <li><button onClick={() => scrollToSection('media')} className={navLinkClass}>카드사</button></li>
+                <li><button onClick={() => scrollToSection('media')} className={navLinkClass}>통신사</button></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">회사</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">애드잇 소개</a></li>
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">클라이언트</a></li>
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">집행사례</a></li>
+                <li><button onClick={() => scrollToSection('about-section')} className={navLinkClass}>애드잇 소개</button></li>
+                <li><button onClick={() => scrollToSection('clients')} className={navLinkClass}>클라이언트</button></li>
+                <li><button onClick={() => scrollToSection('clients')} className={navLinkClass}>집행사례</button></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">지원</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">문의하기</a></li>
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">개인정보처리방침</a></li>
-                <li><a href="#" className="text-sm hover:text-primary transition-colors">이용약관</a></li>
+                <li><button onClick={() => scrollToSection('contact')} className={navLinkClass}>문의하기</button></li>
+                <li><button onClick={scrollToTop} className={navLinkClass}>개인정보처리방침</button></li>
+                <li><button onClick={scrollToTop} className={navLinkClass}>이용약관</button></li>
               </ul>
             </div>
           </div>
