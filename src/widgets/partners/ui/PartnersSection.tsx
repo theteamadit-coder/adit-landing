@@ -186,7 +186,7 @@ export default function PartnersSection() {
           </motion.div>
 
           {/* 사례 그리드 */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {displayedCases.map((caseItem, i) => (
               <motion.div
                 key={i}
