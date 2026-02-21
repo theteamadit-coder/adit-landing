@@ -5,6 +5,7 @@ import { MediaCoverageSection } from '@/widgets/media-coverage';
 import { WhyUsSection } from '@/widgets/why-us';
 import { ProcessSection } from '@/widgets/process';
 import { PartnersSection } from '@/widgets/partners';
+import { CasesSection } from '@/widgets/cases';
 import { CtaSection } from '@/widgets/cta';
 
 export default function Home() {
@@ -32,11 +33,14 @@ export default function Home() {
       {/* 프로세스 - 진행 프로세스 */}
       <ProcessSection />
       
-      {/* 파트너스 - 클라이언트 & 집행사례 */}
+      {/* 파트너스 - 클라이언트 & 파트너 */}
       <div id="clients">
         <PartnersSection />
       </div>
-      
+
+      {/* 집행사례 */}
+      <CasesSection />
+
       {/* CTA - 고객 문의 */}
       <div id="contact">
         <CtaSection />
