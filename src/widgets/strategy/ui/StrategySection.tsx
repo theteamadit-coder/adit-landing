@@ -4,16 +4,16 @@ export default function StrategySection() {
       <div className="max-w-7xl mx-auto">
         {/* 섹션 헤더 */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-heading mb-6">
             <span className="text-primary">Meta Marketing</span>
           </h2>
-          <p className="text-2xl md:text-3xl font-semibold text-heading mb-4">
+          <p className="text-xl md:text-2xl font-semibold text-heading mb-4">
             애드잇은 Meta를 다르게 씁니다!
           </p>
         </div>
 
         {/* 메인 강조 박스 */}
-        <div className="bg-gradient-to-br from-primary to-heading rounded-2xl p-12 mb-16 text-white text-center shadow-2xl">
+        <div className="bg-linear-to-br from-primary to-heading rounded-2xl p-12 mb-16 text-white text-center shadow-2xl">
           <h3 className="text-3xl md:text-4xl font-bold mb-6">
             광고의 시작은 노출이다, 그 중심에 Meta
           </h3>

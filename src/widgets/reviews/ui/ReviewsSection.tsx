@@ -4,10 +4,10 @@ export default function ReviewsSection() {
       <div className="max-w-7xl mx-auto">
         {/* 섹션 헤더 */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-heading mb-6">
             <span className="text-primary">Display Marketing</span>
           </h2>
-          <p className="text-2xl md:text-3xl font-semibold text-heading">
+          <p className="text-xl md:text-2xl font-semibold text-heading">
             브랜드를 명확하게 각인시킵니다!
           </p>
         </div>

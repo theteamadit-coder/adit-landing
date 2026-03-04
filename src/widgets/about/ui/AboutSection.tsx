@@ -55,7 +55,7 @@ export default function AboutSection() {
           <div className="inline-block px-6 py-2 rounded-full bg-primary/20 text-primary font-medium border border-primary/50 mb-6">
             직방 · 호갱노노 공식 광고 대행사
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6 break-keep">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-heading mb-6 break-keep">
             정직을 바탕으로 <span className="text-primary">신뢰와 성과</span>를 동시에!
           </h2>
           <p className="text-xl text-gray-600 break-keep">

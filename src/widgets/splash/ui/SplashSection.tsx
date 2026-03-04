@@ -25,7 +25,7 @@ export default function SplashSection() {
       {/* 왼쪽 절반 - 직방 */}
       <div className="absolute left-0 top-0 w-1/2 h-full flex items-center justify-center overflow-hidden">
         <motion.div
-          className="relative w-72 h-72 md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px]"
+          className="relative w-28 h-28 sm:w-44 sm:h-44 md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px]"
           initial={{ opacity: 0, x: -60 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
           transition={{ duration: 0.9, ease: [0.43, 0.13, 0.23, 0.96] }}
@@ -43,7 +43,7 @@ export default function SplashSection() {
       {/* 오른쪽 절반 - 호갱노노 */}
       <div className="absolute right-0 top-0 w-1/2 h-full flex items-center justify-center overflow-hidden">
         <motion.div
-          className="relative w-72 h-72 md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px]"
+          className="relative w-28 h-28 sm:w-44 sm:h-44 md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px]"
           initial={{ opacity: 0, x: 60 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
           transition={{ duration: 0.9, ease: [0.43, 0.13, 0.23, 0.96] }}
@@ -75,7 +75,7 @@ export default function SplashSection() {
       />
       {/* 글로우 — 중앙 코어 */}
       <motion.div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-white/15 blur-[40px] pointer-events-none"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-white/15 blur-2xl pointer-events-none"
         initial={{ opacity: 0, scale: 0.2 }}
         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.2 }}
         transition={{ duration: 1.0, delay: 0.6 }}
@@ -101,7 +101,7 @@ export default function SplashSection() {
 
         {/* 메인 텍스트 */}
         <motion.p
-          className="text-2xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-lg whitespace-nowrap"
+          className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-lg break-keep text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.8 }}

@@ -41,10 +41,10 @@ export default function PartnersSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6 break-keep">
+          <h2 className="text-3xl md:text-4xl font-bold text-heading mb-6 break-keep">
             <span className="text-primary">애드잇</span>과 함께하는
           </h2>
-          <p className="text-2xl md:text-3xl font-bold text-gray-600 break-keep">
+          <p className="text-xl md:text-2xl font-bold text-gray-600 break-keep">
             클라이언트 &amp; 파트너
           </p>
         </motion.div>

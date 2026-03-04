@@ -148,14 +148,14 @@ export default function MediaCoverageSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block px-6 py-2 rounded-full bg-primary/20 text-primary font-medium border border-primary/50 mb-6">
+          <div className="inline-block px-6 py-2 rounded-full bg-white/20 text-white font-medium border border-white/40 mb-6">
             누가, 언제, 어떤 단지를 다시 보는가
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6 break-keep">
-            직방은 그 <span className="text-primary">타이밍을 알고</span> 있습니다
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 break-keep">
+            직방은 그 <span className="text-primary/90">타이밍을 알고</span> 있습니다
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8 break-keep">
-            <span className="text-heading font-semibold">&apos;관심 → 탐색 → 비교 → 재고려&apos;</span>까지,<br />
+          <p className="text-xl text-gray-200 max-w-4xl mx-auto mb-8 break-keep">
+            <span className="text-white font-semibold">&apos;관심 → 탐색 → 비교 → 재고려&apos;</span>까지,<br />
             실제 행동 흐름을 분석해 시점별 맞춤 광고가 가능한 유일한 플랫폼입니다
           </p>
         </motion.div>

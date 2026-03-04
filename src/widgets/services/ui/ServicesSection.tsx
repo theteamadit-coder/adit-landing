@@ -104,7 +104,7 @@ export default function ServicesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6 break-keep">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-heading mb-6 break-keep">
             분양 현장 <span className="text-primary">시기에 맞춘</span>
             <br />
             스마트 광고 솔루션
@@ -196,7 +196,7 @@ export default function ServicesSection() {
         >
           <motion.button
             onClick={scrollToContact}
-            className="bg-primary hover:bg-primary/90 text-white px-12 py-5 rounded-xl text-xl font-black transition-all transform hover:scale-105 shadow-lg shadow-primary/20"
+            className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl text-lg font-black transition-all transform hover:scale-105 shadow-lg shadow-primary/20"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

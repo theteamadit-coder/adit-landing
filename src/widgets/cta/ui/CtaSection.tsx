@@ -54,7 +54,7 @@ export default function CtaSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6 break-keep">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-heading mb-6 break-keep">
             지금 바로 <span className="text-primary">무료 상담</span>을 시작하세요
           </h2>
           <p className="text-xl text-gray-600 break-keep">
@@ -192,21 +192,23 @@ export default function CtaSection() {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <p className="text-lg text-gray-600 mb-2">
-            전화 문의:{' '}
-            <a href="tel:02-6949-5032" className="text-primary font-semibold hover:underline">
-              02-6949-5032
-            </a>
-          </p>
-          <p className="text-lg text-gray-600">
-            이메일:{' '}
-            <a
-              href="mailto:team@ad-it.co.kr"
-              className="text-primary font-semibold hover:underline"
-            >
-              team@ad-it.co.kr
-            </a>
-          </p>
+          <div className="inline-block bg-white/90 backdrop-blur-sm rounded-xl px-8 py-4 shadow-sm">
+            <p className="text-lg text-gray-700 mb-2">
+              전화 문의:{' '}
+              <a href="tel:02-6949-5032" className="text-primary font-bold hover:underline">
+                02-6949-5032
+              </a>
+            </p>
+            <p className="text-lg text-gray-700">
+              이메일:{' '}
+              <a
+                href="mailto:team@ad-it.co.kr"
+                className="text-primary font-bold hover:underline"
+              >
+                team@ad-it.co.kr
+              </a>
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

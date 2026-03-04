@@ -68,9 +68,9 @@ export default function ProcessSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 break-keep">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 break-keep">
             성과를 만드는 마케팅은<br />
-            <span className="text-primary/80">과정부터 다릅니다</span>
+            <span className="text-yellow-300 drop-shadow-sm">과정부터 다릅니다</span>
           </h2>
           <p className="text-xl text-gray-300 break-keep">
             체계적인 마케팅 프로세스를 확인해보세요
@@ -127,7 +127,7 @@ export default function ProcessSection() {
           </p>
           <motion.button
             onClick={scrollToContact}
-            className="bg-white hover:bg-gray-100 text-primary px-12 py-5 rounded-xl text-xl font-black transition-all transform hover:scale-105 shadow-lg"
+            className="w-full sm:w-auto bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-xl text-lg font-black transition-all transform hover:scale-105 shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

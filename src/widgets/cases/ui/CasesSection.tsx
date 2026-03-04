@@ -58,16 +58,16 @@ export default function CasesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading mb-8 break-keep">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-heading mb-8 break-keep">
             <span className="text-primary">집행사례</span>
           </h2>
-          <p className="text-2xl md:text-3xl text-gray-600 break-keep">
+          <p className="text-xl md:text-2xl text-gray-600 break-keep">
             애드잇과 함께한 <strong className="text-heading">성공적인 프로젝트</strong>들을 확인하세요
           </p>
         </motion.div>
 
         {/* 사례 그리드 */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {displayedCases.map((caseItem, i) => (
             <motion.div
               key={i}

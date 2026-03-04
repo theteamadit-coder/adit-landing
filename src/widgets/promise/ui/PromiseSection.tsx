@@ -4,10 +4,10 @@ export default function PromiseSection() {
       <div className="max-w-7xl mx-auto">
         {/* 섹션 헤더 */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-heading mb-6">
             <span className="text-primary">Hogang NONO Marketing</span>
           </h2>
-          <p className="text-2xl md:text-3xl font-semibold text-heading mb-8">
+          <p className="text-xl md:text-2xl font-semibold text-heading mb-8">
             호갱노노 채널톡은 독보적입니다.
           </p>
         </div>

@@ -84,7 +84,7 @@ export default function WhyUsSection() {
           <div className="inline-block px-6 py-2 rounded-full bg-primary/15 text-primary font-medium border border-primary/40 mb-6">
             분양은 한 번의 광고로 끝나지 않습니다
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6 break-keep">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-heading mb-6 break-keep">
             시기마다 <span className="text-primary">전략이 달라야</span> 합니다
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed break-keep">
@@ -138,7 +138,7 @@ export default function WhyUsSection() {
                 {/* 넘버 - 왼쪽 accent 라인 고정 */}
                 <div className="shrink-0 flex items-start">
                   <div className="border-l-4 border-primary/30 group-hover:border-primary pl-4 transition-colors duration-500">
-                    <span className="text-6xl md:text-7xl font-black text-gray-100 group-hover:text-primary/30 transition-colors duration-500">
+                    <span className="text-6xl md:text-7xl font-black text-gray-300 group-hover:text-primary/50 transition-colors duration-500">
                       {point.number}
                     </span>
                   </div>
