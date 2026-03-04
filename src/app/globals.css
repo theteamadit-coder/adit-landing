@@ -1,11 +1,12 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-heading: var(--heading);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -32,7 +33,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
+  --color-primary: oklch(0.20 0.08 264);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -48,38 +49,39 @@
 
 :root {
   --radius: 0.625rem;
-  /* Dark theme as default */
-  --background: oklch(0.12 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.18 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.18 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.55 0.22 250);
+  /* Light theme — 흰 배경, 어두운 텍스트, 코발트 블루 액센트 */
+  --heading: oklch(0.09 0.03 265);
+  --background: oklch(0.985 0 0);
+  --foreground: oklch(0.13 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0 0);
+  --primary: oklch(0.20 0.08 264);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.25 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.30 0 0);
-  --accent-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0 0);
+  --secondary-foreground: oklch(0.15 0 0);
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.48 0 0);
+  --accent: oklch(0.94 0 0);
+  --accent-foreground: oklch(0.15 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --border: oklch(0 0 0 / 9%);
+  --input: oklch(0 0 0 / 8%);
+  --ring: oklch(0.52 0.24 265);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.18 0 0);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.75 0.15 200);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.25 0 0);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.13 0 0);
+  --sidebar-primary: oklch(0.52 0.24 265);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.94 0 0);
+  --sidebar-accent-foreground: oklch(0.13 0 0);
+  --sidebar-border: oklch(0 0 0 / 9%);
+  --sidebar-ring: oklch(0.52 0.24 265);
 }
 
 .dark {
@@ -133,30 +135,30 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   /* Background overlay utilities */
   .bg-overlay {
     @apply relative;
   }
-  
+
   .bg-overlay::before {
     content: '';
     @apply absolute inset-0 bg-black/70 z-0;
   }
-  
+
   .bg-overlay-dark {
     @apply relative;
   }
-  
+
   .bg-overlay-dark::before {
     content: '';
     @apply absolute inset-0 bg-black/80 z-0;
   }
-  
+
   .bg-overlay-darker {
     @apply relative;
   }
-  
+
   .bg-overlay-darker::before {
     content: '';
     @apply absolute inset-0 bg-black/85 z-0;
@@ -164,7 +166,7 @@
 
   /* Mobile background fix */
   @media (max-width: 768px) {
-    [style*="backgroundImage"] {
+    [style*='backgroundImage'] {
       background-attachment: scroll !important;
     }
   }
@@ -172,5 +174,24 @@
   /* Infinite scroll animation pause on hover */
   .infinite-scroll:hover {
     animation-play-state: paused;
+  }
+
+  /* 흰 배경 회색 격자 패턴 */
+  .bg-grid {
+    background-color: #ffffff;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* 가장자리 페이드아웃 (격자용) */
+  .bg-grid-fade::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 50%, transparent 40%, white 100%);
+    pointer-events: none;
   }
 }

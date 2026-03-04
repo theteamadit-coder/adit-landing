@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 interface ProcessStep {
   step: string;
@@ -36,20 +37,32 @@ export default function ProcessSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el) {
+      const offset = el.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       ref={ref}
-      className="relative py-24 md:py-32 bg-overlay-dark overflow-hidden"
-      style={{
-        backgroundImage: 'url(/asset/bg/light-hand.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="relative py-24 md:py-32 overflow-hidden"
     >
+      {/* 배경 이미지 — 혁신/전략 비주얼 */}
+      <div className="absolute inset-0">
+        <Image
+          src="/asset/background/light-hand.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+
       <div className="container relative z-10 mx-auto px-4">
         {/* 헤더 */}
-        <motion.div 
+        <motion.div
           className="text-left md:text-center mb-20 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -57,9 +70,9 @@ export default function ProcessSection() {
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 break-keep">
             성과를 만드는 마케팅은<br />
-            <span className="text-primary">과정부터 다릅니다</span>
+            <span className="text-primary/80">과정부터 다릅니다</span>
           </h2>
-          <p className="text-xl text-gray-400 break-keep">
+          <p className="text-xl text-gray-300 break-keep">
             체계적인 마케팅 프로세스를 확인해보세요
           </p>
         </motion.div>
@@ -75,32 +88,27 @@ export default function ProcessSection() {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
               >
-                {/* 연결선 (데스크톱에서만) */}
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-full w-full h-px bg-gradient-to-r from-primary/50 to-transparent -translate-x-4 z-0" />
-                )}
-
-                <motion.div 
-                  className="relative z-10 p-6 rounded-2xl bg-background border border-border hover:border-primary/50 transition-all duration-300 h-full"
+                <motion.div
+                  className="relative z-10 p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm hover:bg-white/15 hover:border-white/40 transition-all duration-300 h-full"
                   whileHover={{ scale: 1.02 }}
                 >
                   {/* 스텝 번호 */}
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 text-primary text-2xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/15 text-white text-2xl font-bold border border-white/30 mb-4 group-hover:scale-110 transition-transform duration-300">
                     {process.step}
                   </div>
 
                   {/* 타이틀 */}
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300 break-keep">
+                  <h3 className="text-xl font-bold text-white mb-3 break-keep">
                     {process.title}
                   </h3>
 
                   {/* 설명 */}
-                  <p className="text-gray-400 leading-relaxed text-sm break-keep">
+                  <p className="text-gray-300 leading-relaxed text-sm break-keep">
                     {process.description}
                   </p>
 
                   {/* 하단 강조선 */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl" />
                 </motion.div>
               </motion.div>
             ))}
@@ -108,7 +116,7 @@ export default function ProcessSection() {
         </div>
 
         {/* CTA */}
-        <motion.div 
+        <motion.div
           className="text-left md:text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -117,8 +125,9 @@ export default function ProcessSection() {
           <p className="text-gray-400 mb-6 break-keep">
             각 프로젝트의 특성에 맞춰 프로세스를 유연하게 조정합니다
           </p>
-          <motion.button 
-            className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 rounded-xl text-xl font-black transition-all transform hover:scale-105 shadow-2xl"
+          <motion.button
+            onClick={scrollToContact}
+            className="bg-white hover:bg-gray-100 text-primary px-12 py-5 rounded-xl text-xl font-black transition-all transform hover:scale-105 shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -32,12 +32,12 @@ export default function IntroAnimation() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {/* 배경 */}
-          <div className="absolute inset-0 bg-black" />
+          {/* 다크 배경 */}
+          <div className="absolute inset-0 bg-[#080808]" />
 
           {/* 왼쪽 절반 - 직방 이미지 */}
           <motion.div
-            className="absolute left-0 top-0 w-1/2 h-full bg-black flex items-center justify-center overflow-hidden"
+            className="absolute left-0 top-0 w-1/2 h-full bg-[#080808] flex items-center justify-center overflow-hidden"
             initial={{ x: 0 }}
             animate={{ x: 0 }}
             exit={{ x: '-100%', transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] } }}
@@ -56,7 +56,7 @@ export default function IntroAnimation() {
                 src="/asset/직방.png"
                 alt="직방"
                 fill
-                className="object-contain"
+                className="object-contain brightness-110"
                 priority
               />
             </motion.div>
@@ -64,7 +64,7 @@ export default function IntroAnimation() {
 
           {/* 오른쪽 절반 - 호갱노노 이미지 */}
           <motion.div
-            className="absolute right-0 top-0 w-1/2 h-full bg-black flex items-center justify-center overflow-hidden"
+            className="absolute right-0 top-0 w-1/2 h-full bg-[#080808] flex items-center justify-center overflow-hidden"
             initial={{ x: 0 }}
             animate={{ x: 0 }}
             exit={{ x: '100%', transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] } }}
@@ -83,7 +83,7 @@ export default function IntroAnimation() {
                 src="/asset/호갱노노.png"
                 alt="호갱노노"
                 fill
-                className="object-contain"
+                className="object-contain brightness-110"
                 priority
               />
             </motion.div>
@@ -107,7 +107,7 @@ export default function IntroAnimation() {
                 src="/asset/logo.png"
                 alt="ADIT Logo"
                 fill
-                className="object-contain drop-shadow-2xl"
+                className="object-contain drop-shadow-2xl brightness-200"
                 priority
               />
             </div>
@@ -115,28 +115,46 @@ export default function IntroAnimation() {
 
           {/* 직방 · 호갱노노 공식 대행사 — 강조 텍스트 */}
           <motion.div
-            className="absolute left-1/2 top-[65%] -translate-x-1/2 z-10 text-center px-4"
+            className="absolute left-1/2 top-[65%] -translate-x-1/2 z-10 text-center px-4 whitespace-nowrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 2.8 }}
             exit={{ opacity: 0 }}
           >
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary tracking-tight">
+            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white tracking-tight drop-shadow-lg">
               직방 · 호갱노노 공식 대행사
             </p>
-            <p className="text-lg md:text-xl text-gray-400 mt-3">
+            <p className="text-lg md:text-xl text-gray-400 mt-3 font-light tracking-wide">
               분양 광고의 새로운 기준
             </p>
           </motion.div>
 
-          {/* 빛 효과 */}
+          {/* 글로우 — 외곽 대형 */}
           <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 2 }}
-            transition={{ duration: 1.5, delay: 2.5 }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-gray-400/10 blur-[100px] pointer-events-none"
+            initial={{ opacity: 0, scale: 0.4 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.8, delay: 2.2 }}
             exit={{ opacity: 0 }}
           />
+          {/* 글로우 — 중형 */}
+          <motion.div
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-80 rounded-full bg-white/10 blur-[60px] pointer-events-none"
+            initial={{ opacity: 0, scale: 0.4 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, delay: 2.4 }}
+            exit={{ opacity: 0 }}
+          />
+          {/* 글로우 — 중앙 코어 */}
+          <motion.div
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-white/15 blur-[40px] pointer-events-none"
+            initial={{ opacity: 0, scale: 0.2 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 2.6 }}
+            exit={{ opacity: 0 }}
+          />
+          {/* 바텀 그라데이션 페이드 */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#080808] to-transparent" />
         </motion.div>
       )}
     </AnimatePresence>

@@ -1,4 +1,4 @@
-import { HeroSection } from '@/widgets/hero';
+import { SplashSection } from '@/widgets/splash';
 import { AboutSection } from '@/widgets/about';
 import { ServicesSection } from '@/widgets/services';
 import { MediaCoverageSection } from '@/widgets/media-coverage';
@@ -11,9 +11,9 @@ import { CtaSection } from '@/widgets/cta';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <HeroSection />
-      
+      {/* Splash — 인트로 애니메이션 이후 첫 화면 */}
+      <SplashSection />
+
       {/* About Us - 3가지 핵심 가치 */}
       <AboutSection />
       

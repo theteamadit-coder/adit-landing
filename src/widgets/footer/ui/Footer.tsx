@@ -15,9 +15,9 @@ export default function Footer() {
   const navLinkClass = "text-sm text-left hover:text-primary transition-colors cursor-pointer";
 
   return (
-    <footer className="bg-black/95 text-gray-300 border-t border-white/10">
+    <footer className="bg-gray-900 text-gray-400 border-t border-gray-700/50">
       {/* 메인 푸터 */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-gray-700/50">
         <div className="max-w-7xl mx-auto py-12 px-4 md:px-8">
           {/* 푸터 네비게이션 */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">

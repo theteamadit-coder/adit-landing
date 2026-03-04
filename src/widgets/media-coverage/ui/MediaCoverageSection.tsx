@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 interface MediaPlatform {
   name: string;
@@ -106,38 +107,38 @@ export default function MediaCoverageSection() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch(difficulty) {
-      case '쉬움': return 'text-green-400';
-      case '보통': return 'text-yellow-400';
-      case '어려움': return 'text-red-400';
-      default: return 'text-gray-400';
+      case '쉬움': return 'text-green-600';
+      case '보통': return 'text-amber-600';
+      case '어려움': return 'text-red-600';
+      default: return 'text-gray-600';
     }
   };
 
   const getSpeedColor = (speed: string) => {
     switch(speed) {
-      case '빠름': return 'text-green-400';
-      case '보통': return 'text-yellow-400';
-      case '느림': return 'text-red-400';
-      default: return 'text-gray-400';
+      case '빠름': return 'text-green-600';
+      case '보통': return 'text-amber-600';
+      case '느림': return 'text-red-600';
+      default: return 'text-gray-600';
     }
   };
 
   return (
-    <section 
+    <section
       ref={ref}
       id="media"
-      className="relative py-24 md:py-32 bg-background overflow-hidden"
+      className="relative py-24 md:py-32 overflow-hidden"
     >
-      {/* 그리드 패턴 배경 - 반복 타일, 흐리게 */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: 'url(/asset/bg/GgKi8bBR3AxhELUhW2403hT-DIiconbvUE9T1lTs71S5R3xh62XzeVm_SdHeV4F1BHpEt0Ydi5oxRB9JTmlwfpFzoxPrfBHs3mNgUfcIflg.jpeg)',
-          backgroundRepeat: 'repeat',
-          backgroundSize: '320px 320px',
-          filter: 'blur(0.6px)',
-        }}
-      />
+      {/* 배경 이미지 */}
+      <div className="absolute inset-0">
+        <Image
+          src="/asset/background/woman-working.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
 
       <div className="container relative z-10 mx-auto px-4">
         {/* 헤더 */}
@@ -147,14 +148,14 @@ export default function MediaCoverageSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block px-6 py-2 rounded-full bg-primary/20 text-primary border border-primary/30 mb-6">
+          <div className="inline-block px-6 py-2 rounded-full bg-primary/20 text-primary font-medium border border-primary/50 mb-6">
             누가, 언제, 어떤 단지를 다시 보는가
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 break-keep">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6 break-keep">
             직방은 그 <span className="text-primary">타이밍을 알고</span> 있습니다
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 break-keep">
-            <span className="text-white font-semibold">&apos;관심 → 탐색 → 비교 → 재고려&apos;</span>까지,<br />
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8 break-keep">
+            <span className="text-heading font-semibold">&apos;관심 → 탐색 → 비교 → 재고려&apos;</span>까지,<br />
             실제 행동 흐름을 분석해 시점별 맞춤 광고가 가능한 유일한 플랫폼입니다
           </p>
         </motion.div>
@@ -172,8 +173,8 @@ export default function MediaCoverageSection() {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-white text-black shadow-lg shadow-white/30 border-2 border-white'
-                  : 'bg-white/10 text-white hover:bg-white/20 hover:text-primary backdrop-blur-sm border border-white/20'
+                  ? 'bg-primary text-white shadow-md shadow-primary/30 border-2 border-primary'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-primary border border-gray-200'
               }`}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
@@ -191,7 +192,7 @@ export default function MediaCoverageSection() {
           {filteredPlatforms.map((platform, index) => (
             <motion.div
               key={`${platform.name}-${index}`}
-              className="group relative p-6 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-500"
+              className="group relative p-6 rounded-2xl bg-white border border-gray-100 hover:border-primary/40 hover:shadow-md transition-all duration-500 shadow-sm"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -199,7 +200,7 @@ export default function MediaCoverageSection() {
             >
               {/* 이름 */}
               <div className="mb-4">
-                <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-300 break-keep">
+                <h3 className="text-xl font-bold text-heading group-hover:text-primary transition-colors duration-300 break-keep">
                   {platform.name}
                 </h3>
                 <span className="text-sm text-primary">
@@ -208,20 +209,20 @@ export default function MediaCoverageSection() {
               </div>
 
               {/* 설명 */}
-              <p className="text-gray-300 text-sm mb-4 break-keep">
+              <p className="text-gray-600 text-sm mb-4 break-keep">
                 {platform.description}
               </p>
 
               {/* 난이도 & 응답속도 */}
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <div className="text-xs text-gray-500 mb-1">문안 검수 난이도</div>
+                  <div className="text-xs text-gray-600 mb-1">문안 검수 난이도</div>
                   <div className={`text-sm font-semibold ${getDifficultyColor(platform.difficulty)}`}>
                     {platform.difficulty}
                   </div>
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500 mb-1">매체 피드백 속도</div>
+                  <div className="text-xs text-gray-600 mb-1">매체 피드백 속도</div>
                   <div className={`text-sm font-semibold ${getSpeedColor(platform.responseSpeed)}`}>
                     {platform.responseSpeed}
                   </div>
@@ -231,7 +232,7 @@ export default function MediaCoverageSection() {
               {/* 특징 */}
               <ul className="space-y-2">
                 {platform.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-2 text-sm text-gray-400">
+                    <li key={featureIndex} className="flex items-start gap-2 text-sm text-gray-600">
                     <span className="text-primary mt-0.5">•</span>
                     <span>{feature}</span>
                   </li>
@@ -239,7 +240,7 @@ export default function MediaCoverageSection() {
               </ul>
 
               {/* 하단 강조선 */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
           ))}
         </div>
@@ -251,8 +252,8 @@ export default function MediaCoverageSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <div className="inline-block px-8 py-4 rounded-2xl backdrop-blur-md bg-primary/10 border border-primary/30">
-            <p className="text-lg text-white">
+          <div className="inline-block px-8 py-4 rounded-2xl bg-blue-50 border border-blue-200">
+            <p className="text-lg text-heading">
               <span className="font-bold text-primary">초정밀 타겟팅</span>으로 일반 광고 대비 <span className="font-bold text-primary">전환률 3배 증가</span>
             </p>
           </div>

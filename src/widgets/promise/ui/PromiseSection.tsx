@@ -4,16 +4,16 @@ export default function PromiseSection() {
       <div className="max-w-7xl mx-auto">
         {/* 섹션 헤더 */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            <span className="text-blue-600">Hogang NONO Marketing</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
+            <span className="text-primary">Hogang NONO Marketing</span>
           </h2>
-          <p className="text-2xl md:text-3xl font-semibold text-gray-800 mb-8">
+          <p className="text-2xl md:text-3xl font-semibold text-heading mb-8">
             호갱노노 채널톡은 독보적입니다.
           </p>
         </div>
 
         {/* Korea No.1 프롭테크 강조 박스 */}
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-12 mb-16 text-white shadow-2xl">
+        <div className="bg-gradient-to-br from-primary to-heading rounded-2xl p-12 mb-16 text-white shadow-2xl">
           <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             Korea No.1 프롭테크 기업, 직방
           </h3>
@@ -26,7 +26,7 @@ export default function PromiseSection() {
 
         {/* 유저 데모그래픽 */}
         <div className="text-center mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8">유저 데모그래픽</h3>
+          <h3 className="text-3xl font-bold text-heading mb-8">유저 데모그래픽</h3>
           <div className="w-full aspect-[16/9] bg-gray-300 rounded-2xl max-w-4xl mx-auto"></div>
         </div>
 
@@ -35,11 +35,11 @@ export default function PromiseSection() {
           {/* 채널톡 */}
           <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
             <div className="w-full aspect-square bg-gray-300 rounded-lg mb-6"></div>
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">01 채널톡</h3>
-            <p className="text-xl font-semibold text-gray-900 mb-4 leading-tight">
+            <h3 className="text-2xl font-bold text-primary mb-4">01 채널톡</h3>
+            <p className="text-xl font-semibold text-heading mb-4 leading-tight">
               읽고, 반응하고, 계약까지 연결되는 분양 광고는
             </p>
-            <p className="text-xl font-bold text-blue-600">
+            <p className="text-xl font-bold text-primary">
               호갱노노 채널톡이 독보적!
             </p>
           </div>
@@ -47,8 +47,8 @@ export default function PromiseSection() {
           {/* 분양상담사 PRO */}
           <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
             <div className="w-full aspect-square bg-gray-300 rounded-lg mb-6"></div>
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">02 분양상담사 PRO</h3>
-            <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+            <h3 className="text-2xl font-bold text-primary mb-4">02 분양상담사 PRO</h3>
+            <p className="text-lg text-heading mb-4 leading-relaxed">
               분양상담사와 직접 연결되는 기능을 통해
               <br />
               고객과의 즉각적인 소통을 기대할 수 있습니다.
@@ -61,8 +61,8 @@ export default function PromiseSection() {
           {/* 단지마커 */}
           <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
             <div className="w-full aspect-square bg-gray-300 rounded-lg mb-6"></div>
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">03 단지마커</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <h3 className="text-2xl font-bold text-primary mb-4">03 단지마커</h3>
+            <p className="text-lg text-heading leading-relaxed">
               지도 기반 탐색에 최적화된 고시인성 광고 상품으로,
               <br />
               <strong>시각적 주목도가 높아</strong>

@@ -32,7 +32,7 @@ export default function PartnersSection() {
     <section
       ref={ref}
       id="clients"
-      className="relative py-24 md:py-32 bg-linear-to-br from-background via-primary/5 to-blue-950/20 overflow-hidden"
+      className="relative py-24 md:py-32 bg-gray-50 overflow-hidden"
     >
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
@@ -41,10 +41,10 @@ export default function PartnersSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 break-keep">
+          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6 break-keep">
             <span className="text-primary">애드잇</span>과 함께하는
           </h2>
-          <p className="text-2xl md:text-3xl font-bold text-gray-300 break-keep">
+          <p className="text-2xl md:text-3xl font-bold text-gray-600 break-keep">
             클라이언트 &amp; 파트너
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export default function PartnersSection() {
             {firstRow.map((img, i) => (
               <div
                 key={i}
-                className="shrink-0 w-40 h-24 bg-white rounded-xl p-4 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+                className="shrink-0 w-40 h-24 bg-white rounded-xl p-4 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
               >
                 <div className="relative w-full h-full">
                   <Image src={`/asset/partner/${img}`} alt={`Partner ${i + 1}`} fill className="object-contain" />
@@ -83,7 +83,7 @@ export default function PartnersSection() {
             {secondRow.map((img, i) => (
               <div
                 key={i}
-                className="shrink-0 w-40 h-24 bg-white rounded-xl p-4 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+                className="shrink-0 w-40 h-24 bg-white rounded-xl p-4 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
               >
                 <div className="relative w-full h-full">
                   <Image src={`/asset/partner/${img}`} alt={`Partner ${i + 1}`} fill className="object-contain" />

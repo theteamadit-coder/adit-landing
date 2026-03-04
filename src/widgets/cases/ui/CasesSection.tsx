@@ -48,12 +48,7 @@ export default function CasesSection() {
     <section
       ref={ref}
       id="cases"
-      className="relative py-24 md:py-32 bg-background overflow-hidden"
-      style={{
-        backgroundImage: 'url(/asset/bg/GgKi8bBR3AxhELUhW2403hT-DIiconbvUE9T1lTs71S5R3xh62XzeVm_SdHeV4F1BHpEt0Ydi5oxRB9JTmlwfpFzoxPrfBHs3mNgUfcIflg.jpeg)',
-        backgroundRepeat: 'repeat',
-        backgroundSize: '320px 320px',
-      }}
+      className="relative py-24 md:py-32 bg-white overflow-hidden"
     >
       <div className="container relative z-10 mx-auto px-4">
         {/* 헤더 */}
@@ -63,11 +58,11 @@ export default function CasesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 break-keep">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading mb-8 break-keep">
             <span className="text-primary">집행사례</span>
           </h2>
-          <p className="text-2xl md:text-3xl text-gray-300 break-keep">
-            애드잇과 함께한 <strong className="text-white">성공적인 프로젝트</strong>들을 확인하세요
+          <p className="text-2xl md:text-3xl text-gray-600 break-keep">
+            애드잇과 함께한 <strong className="text-heading">성공적인 프로젝트</strong>들을 확인하세요
           </p>
         </motion.div>
 
@@ -95,7 +90,7 @@ export default function CasesSection() {
                   </p>
                 </div>
               </div>
-              <p className="text-sm text-gray-400 font-medium text-center mt-2 group-hover:text-primary transition-colors duration-300 break-keep">
+              <p className="text-sm text-gray-600 font-medium text-center mt-2 group-hover:text-primary transition-colors duration-300 break-keep">
                 {caseItem.name}
               </p>
             </motion.div>
@@ -112,7 +107,7 @@ export default function CasesSection() {
           >
             <motion.button
               onClick={() => setShowAll(true)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-xl text-lg font-bold transition-all shadow-2xl"
+              className="bg-primary hover:bg-primary/90 text-white px-12 py-4 rounded-xl text-lg font-bold transition-all shadow-lg shadow-primary/20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -138,7 +133,7 @@ export default function CasesSection() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
               }}
-              className="bg-gray-700 hover:bg-gray-600 text-white px-12 py-4 rounded-xl text-lg font-bold transition-all shadow-2xl"
+              className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-12 py-4 rounded-xl text-lg font-bold transition-all shadow-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
