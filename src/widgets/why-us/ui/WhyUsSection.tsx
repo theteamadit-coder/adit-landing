@@ -69,8 +69,8 @@ export default function WhyUsSection() {
   return (
     <section ref={ref} id="why-us-section" className="relative py-24 md:py-32 overflow-hidden">
       {/* 배경 이미지 — 콘크리트 텍스처 */}
-      <div className="absolute inset-y-0 left-[-25%] right-[-25%] md:left-0 md:right-0">
-        <Image src="/asset/background/sec3-bg.jpg" alt="" fill className="object-cover object-center" />
+      <div className="absolute inset-0">
+        <Image src="/asset/background/sec3-bg.jpg" alt="" fill className="object-contain object-top md:object-cover md:object-center" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4">

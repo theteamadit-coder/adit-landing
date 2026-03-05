@@ -47,12 +47,12 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 배경 이미지 — 실크 웨이브 텍스처 */}
-      <div className="absolute inset-y-0 left-[-25%] right-[-25%] md:left-0 md:right-0">
+      <div className="absolute inset-0">
         <Image
           src="/asset/background/sec6-bg.jpg"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-contain object-top md:object-cover md:object-center"
           priority
         />
       </div>
