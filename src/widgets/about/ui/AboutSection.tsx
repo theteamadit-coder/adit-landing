@@ -35,12 +35,12 @@ export default function AboutSection() {
   return (
     <section ref={ref} id="about-section" className="relative py-24 md:py-32 overflow-hidden">
       {/* 배경 이미지 — 실크 웨이브 텍스처 */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-y-0 left-[-25%] right-[-25%] md:left-0 md:right-0">
         <Image
           src="/asset/background/sec6-bg.jpg"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover object-center"
         />
       </div>
 

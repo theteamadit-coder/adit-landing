@@ -51,7 +51,7 @@ export default function ProcessSection() {
       className="relative py-24 md:py-32 overflow-hidden"
     >
       {/* 배경 이미지 — 혁신/전략 비주얼 */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-y-0 left-[-25%] right-[-25%] md:left-0 md:right-0">
         <Image
           src="/asset/background/light-hand.jpg"
           alt=""

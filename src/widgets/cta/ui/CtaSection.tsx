@@ -11,23 +11,42 @@ export default function CtaSection() {
     content: '',
     agree: false,
   });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.agree) {
       alert('개인정보 수집 및 이용에 동의해주세요.');
       return;
     }
-    console.log('Form submitted:', formData);
-    alert('정상적으로 접수되었습니다.');
-    setFormData({
-      name: '',
-      phone: '',
-      content: '',
-      agree: false,
-    });
+
+    setStatus('loading');
+
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          message: formData.content,
+          privacyAgree: true,
+          hp: '',
+          domain: window.location.hostname,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error('서버 오류');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', phone: '', content: '', agree: false });
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -37,7 +56,7 @@ export default function CtaSection() {
       className="relative py-24 md:py-32 overflow-hidden"
     >
       {/* 배경 이미지 — 팀 사진 */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-y-0 left-[-25%] right-[-25%] md:left-0 md:right-0">
         <Image
           src="/asset/background/team-people.jpg"
           alt=""
@@ -170,17 +189,32 @@ export default function CtaSection() {
               </div>
             </motion.div>
 
+            {/* 에러 메시지 */}
+            {status === 'error' && (
+              <p className="text-red-500 text-sm text-center">
+                전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.
+              </p>
+            )}
+
+            {/* 성공 메시지 */}
+            {status === 'success' && (
+              <p className="text-green-600 text-sm text-center font-semibold">
+                정상적으로 접수되었습니다. 담당자가 곧 연락드리겠습니다.
+              </p>
+            )}
+
             {/* 제출 버튼 */}
             <motion.button
               type="submit"
-              className="w-full bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-xl text-2xl font-black transition-all transform hover:scale-[1.02] shadow-2xl shadow-primary/30"
+              disabled={status === 'loading' || status === 'success'}
+              className="w-full bg-primary hover:bg-primary/90 disabled:bg-primary/50 text-white px-8 py-6 rounded-xl text-2xl font-black transition-all transform hover:scale-[1.02] disabled:scale-100 shadow-2xl shadow-primary/30"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              무료 컨설팅 신청하기
+              {status === 'loading' ? '전송 중...' : status === 'success' ? '접수 완료' : '무료 컨설팅 신청하기'}
             </motion.button>
           </form>
         </motion.div>
